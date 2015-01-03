@@ -1,0 +1,7 @@
+4 GPUs with 8 cores in each
+1.pair of rectified images obtained
+2.Harris corner detection:can be done in parallel in opencv.:
+	average of the gradient matrix over a window:can be done in parallel--get corner strength and select points which lie above a certain threshold.
+3.correlation computation;brightness reduction;averaging filter---distribute the job over the various feature points obtained in step 2.
+4.RANSAC robust estimation:random sampling done in parallel
+5.disparity element growing:NCC over 4 neighbourhoods--each can be done in parallel for 8 seed points
